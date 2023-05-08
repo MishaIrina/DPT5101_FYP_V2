@@ -1,0 +1,502 @@
+<!--
+	Admin/Developer
+	Admin login page
+	Add member page
+	Add product page
+	Customer product page
+	Customer management page
+	Customer order page
+
+	User/Customer
+	Shopping cart page
+	User sign in page
+	Payment page
+	Review page
+	Catalog page
+	Refund policy page
+	‘Now Trending’ page
+	Member page
+	‘About us’ page
+	Checkout page
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+
+	<title>2DArchive</title>
+
+	<!-- <link rel='icon' type='image/png' href='/favicon.png'>
+	<link rel='stylesheet' href='/global.css'>
+	<link rel='stylesheet' href='/build/bundle.css'>
+
+	<script defer src='/build/bundle.js'></script> -->
+
+    <style>
+        /* main {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(32, 30, 30);
+        } */
+
+        html, body {
+            position: relative;
+            /* width: 100%;
+            height: 100%; */
+        }
+
+        body {
+            background-color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        }
+
+        section {
+            display: flex;
+        }
+
+        hr {
+            margin: 0;
+            padding: 0;
+        }
+
+        .side-navbar {
+            width: 20%;
+            display: flex;
+            border: 3px black solid;
+            font-size: 30px;
+            color: whitesmoke;
+            height: 100%;
+        }
+
+        .side-navbar-column {
+            width: 100%;
+        }
+
+        .studio-name-block, .product-listing-block {
+            cursor: pointer;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar-block-option {
+            width: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            list-style: none;
+            
+        }
+
+        ul {
+            margin: 0;
+            list-style-type: none;
+            height: 100%;
+            overflow: auto;
+            padding: 30px;
+        }
+
+        li {
+            padding: 3px 0;
+        }
+
+        li a {
+            display: block;
+            color: whitesmoke;
+            padding: 8px 30px;
+            text-decoration: none;
+        }
+
+        li a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+        }
+
+        .product-listing-block {
+            padding: 20px;
+            text-align: left;
+            /* padding-left: 50px; */
+        }
+
+        .dashboard-section {
+            /* background-color: black; */
+            color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+        }
+
+        .header-navbar-buttons {
+            background-color: black;
+            color: whitesmoke;
+            padding: 15px 32px;
+            text-align: center;
+            border: none;
+            display: inline-block;
+            font-size: 30px;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+
+        button.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        button:hover:not(.active) {
+            background-color: #555;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .header-navbar-utility, .header-navbar-account {
+            padding: 10px;
+        }
+
+        .header-navbar-utility a {
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .header-navbar-account {
+            
+        }
+
+        .order-section {
+            display: flex;
+            flex-direction: column;
+            padding: 10px 20px;
+        }
+
+        .order-title {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .order-title h3 {
+            text-transform: uppercase;
+            font-size: 30px;
+            letter-spacing: 5px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin-right: 30px;
+        }
+
+        .order-title {
+            padding: 25px 25px;
+        }
+
+        /* .unpaid-button, .pending-button {
+            width: 50px;
+            height: 50px;
+            border: none;
+            padding: 10px;
+            /* margin-right: 10px; 
+            margin: 10px;
+            background-color: rgb(39, 39, 39);
+        } */
+
+        .completed-button, .unpaid-button, .pending-button {
+            border: none;
+            background-color: rgb(4, 102, 221);
+            padding: 15px 30px;
+            font-size: 20px;
+            color:whitesmoke;
+            border-radius: 10px;
+            letter-spacing: 3px;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+
+        .create-game-block {
+            padding: 20px;
+            background-color: rgb(39, 39, 39);
+            width: 100%;
+        }
+
+        table {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            background-color: rgb(30, 29, 29);
+        }
+
+        thead {
+            background-color: rgb(39, 39, 39);
+        }
+
+        td, th {
+            text-align: left;
+            padding: 20px;
+            font-size: 20px;
+        }
+
+        th {
+            
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            /* background-color: #5c4242; */
+        }
+
+        .game-delete {
+            background-color: black;
+            color: whitesmoke;
+            /* padding: 15px 32px; */
+            
+            border: none;
+            
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* button.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        button:hover:not(.active) {
+            background-color: #555;
+            color: white;
+        } */
+
+        /* main {
+            display: flex;
+            flex-direction: column;
+        } */
+
+        /* .top-navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .top-navbar a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 15px;
+        }	
+
+        .top-navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #201e1e;
+            
+            padding-bottom: 15px;
+        }
+
+        section .background-section {
+            background-color: rgb(23, 21, 114);
+            padding: 20px;
+        }
+
+        section .sign-in-image {
+            float: left;
+        }
+
+        section .sign-in-message {
+            float: right;
+        }
+
+        h1 {
+            color: whitesmoke;
+            text-transform: uppercase;
+            font-size: 2em;
+            font-weight: 100;
+        } 
+
+        .dev-image {
+            height: 6em;
+            
+            /* will-change: filter;
+            transition: filter 300ms; 
+        }
+
+        #company-logo {
+            font-size: 30px;
+            position: absolute;
+            top: 1%;
+            left: 2.5%;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 10px 30px 10px 30px;
+        }
+
+        ul {
+            list-style: none;
+            
+        } */
+
+        /* .logo {
+            height: 6em;
+            padding: 1.5em;
+            will-change: filter;
+            transition: filter 300ms;
+        }
+        .logo:hover {
+            filter: drop-shadow(0 0 2em #646cffaa);
+        }
+        .logo.svelte:hover {
+            filter: drop-shadow(0 0 2em #ff3e00aa);
+        }
+        .read-the-docs {
+            color: #888;
+        } */
+    </style>
+</head>
+<body>
+    <section>
+        <nav class="side-navbar">
+            <div class="side-navbar-column">
+                <div class="studio-name-block"><h1>2DArchive</h1></div>
+                <hr>
+                <div class="navbar-block-option">
+                    <ul>
+                        <li class="link"><a href='#'>Dashboard</a></li>
+                        <li class="link-active"><a href='#'>Team</a></li>
+                        <li class="link"><a href='#'>Account</a></li>
+                        <li class="link"><a href='#'>Revenue</a></li>                        
+                        <li class="link"><a href='#'>Order</a></li>                        
+                    </ul>
+                </div>
+                <hr>
+                <div class="product-listing-block">
+                    Your Games
+                </div>                
+                <hr>
+                <div class="settings-block">
+                    <ul>
+                        <li class="link"><a href='#'>Settings</a></li>
+                        <li class="link-active">V0.26</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="dashboard-section">
+            <header>
+                <div class="header-navbar-utility">
+                    <a href="#"><button class="header-navbar-buttons">About</button>
+                    <a href="#"><button class="header-navbar-buttons">News</button></a>
+                    <a href="#"><button class="header-navbar-buttons">Documentation</button></a>
+                    <a hred="#"><button class="header-navbar-buttons">Support</button></a>
+                </div>
+                <div class="header-navbar-account">
+                    <!-- <button>Notif</button>
+                    <button>Lang</button> -->
+                    <a href="#"><button class="header-navbar-buttons">Account</button></a>
+                </div>
+            </header>
+            <main>
+                <section class="order-section">
+                    <div class="order-title">
+                        <h3>Order List</h3>
+                        <div class="order-title">
+                            <button class="unpaid-button" onclick="location.href='/OrderUnpaid.html'">UNPAID</button>
+                            <button class="pending-button" onclick="location.href='/OrderPending.html'">PENDING</button>
+                            <button class="completed-button">COMPLETED</button>
+                            <!-- <button class="edit-button-png"><img src="images\edit-button.png"></button>
+                            <button class="delete-button-png"><img src="images\delete-button.png"></button> -->
+                        </div>
+                    </div>
+                    <div class="create-game-block">
+                        <!-- <h2>Create Your First Game</h2>
+                        <p>Click the button below and enter your game details.</p>
+                        <button>CREATE GAME</button> -->
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Product ID</td>
+                                    <td>Product Name</td>
+                                    <td>Email</td>                                    
+                                    <td>Payment</td>
+                                    <td>Status</td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1003001</td>
+                                    <td>Pac-man</td>
+                                    <td>dummyrai_01@gmail.com</td>
+                                    <td>Done</td>
+                                    <td>Completed</td>
+                                    <td><button class="game-delete">Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td>1005001</td>
+                                    <td>Tetris</td>
+                                    <td>sonnyatan10@gmail.com</td>
+                                    <td>Done</td>
+                                    <td>Completed</td>
+                                    <td><button class="game-delete">Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td>1001001</td>
+                                    <td>Snake and Ladders</td>
+                                    <td>muhd.faizal_10@gmail.com</td>
+                                    <td>Done</td>
+                                    <td>Completed</td>
+                                    <td><button class="game-delete">Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td>1002001</td>
+                                    <td>Snake Game 2</td>
+                                    <td>vickylin01@gmail.com</td>
+                                    <td>Done</td>
+                                    <td>Completed</td>
+                                    <td><button class="game-delete">Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td>1004001</td>
+                                    <td>Flappy Bird</td>
+                                    <td>vikkasharagunathan@gmail.com</td>
+                                    <td>Done</td>
+                                    <td>Completed</td>
+                                    <td><button class="game-delete">Edit</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+            <footer>
+                <p>&copy; 2023, 2DArchive</p>
+            </footer>
+        </div>
+    </section>
+</body>
+</html>

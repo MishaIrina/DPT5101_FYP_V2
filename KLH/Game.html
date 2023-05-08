@@ -1,0 +1,295 @@
+<!--
+	Admin/Developer
+	Admin login page
+	Add member page
+	Add product page
+	Customer product page
+	Customer management page
+	Customer order page
+
+	User/Customer
+	Shopping cart page
+	User sign in page
+	Payment page
+	Review page
+	Catalog page
+	Refund policy page
+	‘Now Trending’ page
+	Member page
+	‘About us’ page
+	Checkout page
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+
+	<title>2DArchive</title>
+
+	<!-- <link rel='icon' type='image/png' href='/favicon.png'>
+	<link rel='stylesheet' href='/global.css'>
+	<link rel='stylesheet' href='/build/bundle.css'>
+
+	<script defer src='/build/bundle.js'></script> -->
+
+    <style>
+        /* main {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(32, 30, 30);
+        } */
+
+        html, body {
+            position: relative;
+            /* width: 100%;
+            height: 100%; */
+        }
+
+        body {
+            background-color: #333;
+            margin: 0 auto;
+            padding: 8px;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        }
+
+        main .container {
+            text-align: center;
+            padding: 0;
+            display: flex;
+            flex: auto;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        @media (min-width: 640px) {
+            main {
+                max-width: none;
+            }
+        }
+
+        .side-navbar {
+            border-radius: 25px;
+            padding: 20px;
+            background-color: #1c1a1a;
+            /* width: 500px; */
+            flex-grow: 1;
+            flex-basis: 200px;
+        }
+
+        a {
+            text-decoration: none;
+            color: whitesmoke;
+        }
+
+        nav li {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            padding: 10px;
+            list-style: none;
+        }
+
+        .container-table {
+            background-color: beige;
+            /* flex-grow: 2;
+            width: 100px; */
+            
+        }
+
+        .table-title-container {
+            font-size: 2em;
+            /* top: 50%;
+            left: 50%; */
+            transform: translate(45%, 0);
+        }
+
+        .member-table {
+            font-size: 30px;
+            padding: 0 20px 20px 20px;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 20px;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        /* .top-navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .top-navbar a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 15px;
+        }	
+
+        .top-navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #201e1e;
+            
+            padding-bottom: 15px;
+        }
+
+        section .background-section {
+            background-color: rgb(23, 21, 114);
+            padding: 20px;
+        }
+
+        section .sign-in-image {
+            float: left;
+        }
+
+        section .sign-in-message {
+            float: right;
+        }
+
+        h1 {
+            color: whitesmoke;
+            text-transform: uppercase;
+            font-size: 2em;
+            font-weight: 100;
+        } 
+
+        .dev-image {
+            height: 6em;
+            
+            /* will-change: filter;
+            transition: filter 300ms; 
+        }
+
+        #company-logo {
+            font-size: 30px;
+            position: absolute;
+            top: 1%;
+            left: 2.5%;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 10px 30px 10px 30px;
+        }
+
+        ul {
+            list-style: none;
+            
+        } */
+
+        /* .logo {
+            height: 6em;
+            padding: 1.5em;
+            will-change: filter;
+            transition: filter 300ms;
+        }
+        .logo:hover {
+            filter: drop-shadow(0 0 2em #646cffaa);
+        }
+        .logo.svelte:hover {
+            filter: drop-shadow(0 0 2em #ff3e00aa);
+        }
+        .read-the-docs {
+            color: #888;
+        } */
+    </style>
+</head>
+<body>
+    <h1>2DArchive</h1>
+    <div >
+    <main class="container">
+        <nav class="side-navbar">
+            <div class="">
+                <ul>
+                    <li class="link"><a href='#'>Add Games</a></li>
+                    <li class="link-active"><a href='#'>Manage Games</a></li>
+                    <li class="link"><a href='#'>Manage Members</a></li>
+                    <li class="link"><a href='#'>Manage Customers</a></li>
+                    <li class="link"><a href='#'>Manage Orders</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section class="container-table">
+            <div class="table-title-container">
+                <h1>Games</h1>
+            </div>
+            <div class="member-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Version</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Snakes and Ladder</td>
+                            <td>FREE</td>
+                            <td>1.0</td>
+                            <td>Active</td>
+                            <!-- <button>Delete</button>
+                            <button>Delete</button>
+                            <button>Delete</button> -->
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Tetris</td>
+                            <td>$10.00</td>
+                            <td>5.0</td>
+                            <td>Active</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Pacman</td>
+                            <td>$1.00</td>
+                            <td>10.0</td>
+                            <td>Discontinued</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- <ul>
+            <li>Username</li>
+            <input class='sign-in'>
+            <li>Email</li>
+            <input class='sign-in'>
+            <li>Password</li>
+            <input class='sign-in'>
+        </ul> -->
+        
+    </main>
+    </div>
+</body>
+</html>

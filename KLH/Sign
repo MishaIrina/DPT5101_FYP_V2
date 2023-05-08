@@ -1,0 +1,229 @@
+main .container {
+    text-align: center;
+    padding: 0;
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+.container-table {
+    background-color: beige;
+    /* flex-grow: 2;
+    width: 100px; */
+    
+}
+
+.table-title-container {
+    font-size: 2em;
+    /* top: 50%;
+    left: 50%; */
+    transform: translate(45%, 0);
+}
+
+.member-table {
+    font-size: 30px;
+    padding: 0 20px 20px 20px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 20px;
+}
+
+th {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+<main class="container">
+        <nav class="side-navbar">
+            <div class="">
+                <ul>
+                    <li class="link"><a href='#'>Add Games</a></li>
+                    <li class="link-active"><a href='#'>Manage Games</a></li>
+                    <li class="link"><a href='#'>Manage Members</a></li>
+                    <li class="link"><a href='#'>Manage Customers</a></li>
+                    <li class="link"><a href='#'>Manage Orders</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section class="container-table">
+            <div class="table-title-container">
+                <h1>Customer Orders</h1>
+            </div>
+            <div class="member-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Price</th>
+                            <th>Version</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Snakes and Ladder</td>
+                            <td>Lee</td>
+                            <td>dummytent@gmail.com</td>
+                            <td>FREE</td>
+                            <td>1.0</td>
+                            <!-- <button>Delete</button>
+                            <button>Delete</button>
+                            <button>Delete</button> -->
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Tetris</td>
+                            <td>Ryan</td>
+                            <td>dummygamer01@outlook.com</td>
+                            <td>$10.00</td>
+                            <td>5.0</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Tetris</td>
+                            <td>Soo</td>
+                            <td>dummygamer02@outlook.com</td>
+                            <td>$10.0</td>
+                            <td>5.0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- <ul>
+            <li>Username</li>
+            <input class='sign-in'>
+            <li>Email</li>
+            <input class='sign-in'>
+            <li>Password</li>
+            <input class='sign-in'>
+        </ul> -->
+        
+    </main>
+
+    <section class="create-game-section">
+        <div class="create-game-title">
+            <h3>Your Games</h3>
+            <div class="create-game-buttons">
+                <button class="add-button-png"><img src="images\add-button.png"></button>
+                <button class="edit-button-png"><img src="images\edit-button.png"></button>
+                <button class="delete-button-png"><img src="images\delete-button.png"></button>
+            </div>
+        </div>
+        <div class="create-game-block">
+            <!-- <h2>Create Your First Game</h2>
+            <p>Click the button below and enter your game details.</p>
+            <button>CREATE GAME</button> -->
+            <table>
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Name</td>
+                        <!-- <td>Logo</td> -->
+                        <td>Genre</td>
+                        <td>Price</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1001001</td>
+                        <td>Snake and Ladders</td>
+                        <!-- <td>Test_1</td> -->
+                        <td>Board, Racing</td>
+                        <td>$2.00</td>
+                        <td><button class="game-delete">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>1002001</td>
+                        <td>Snake Game 2</td>
+                        <!-- <td>Snake Game 2</td> -->
+                        <td>Action</td>
+                        <td>$1.00</td>
+                        <td><button class="game-delete">Delete</button></td>
+                        <!-- <td><button class="game-delete">Edit</button></td> -->
+                    </tr>
+                    <tr>
+                        <td>1003001</td>
+                        <td>Pac-man</td>
+                        <!-- <td><img src="/images/pacman-logo.png"></td> -->
+                        <td>Action, Retro</td>
+                        <td>$5.00</td>
+                        <td><button class="game-delete">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>1004001</td>
+                        <td>Flappy Bird</td>
+                        <!-- <td>Flappy Bird</td> -->
+                        <td>Action</td>
+                        <td>$1.00</td>
+                        <td><button class="game-delete">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>1005001</td>
+                        <td>Tetris</td>
+                        <!-- <td>Tetris</td> -->
+                        <td>Tile-matching, Puzzle</td>
+                        <td>$5.00</td>
+                        <td><button class="game-delete">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+        
+    const image_input = document.querySelector("#image_input");
+    var uploaded_image = "";
+
+    image_input.addEventListener("change", addImage);
+
+    function addImage() {
+        const reader = new FileReader();
+        reader.addEventListener("load", () => {
+        uploaded_image = reader.result;
+        document.querySelector("#display_img").style.backgroundImage = `url(${uploaded_image})`;
+        });
+        reader.readAsDataURL(this.files[0]);
+    }
+
+    window.addEventListener("load", () => {
+        const name = localStorage.getItem("name");
+        const type = localStorage.getItem("type");
+        const description = localStorage.getItem("description");
+
+        document.getElementById("name").innerHTML = name;
+        document.getElementById("type").innerHTML = type;
+        document.getElementById("description").innerHTML = description;
+    })
+
+	function Publish() {
+		window.location.href="seller_manage_product_page.html";
+	}
+
+	function Cancel() {
+		localStorage.removeItem("name");
+		localStorage.removeItem("type");
+		localStorage.removeItem("description");
+
+		window.location.href="seller_add_product_page.html";
+	}
