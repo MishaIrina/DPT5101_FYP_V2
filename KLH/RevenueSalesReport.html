@@ -44,8 +44,8 @@
 
         html, body {
             position: relative;
-            /* width: 100%;
-            height: 100%; */
+            width: 100%;
+            height: 100%;
         }
 
         body {
@@ -58,6 +58,7 @@
 
         section {
             display: flex;
+            min-height: 100vh;
         }
 
         hr {
@@ -177,18 +178,18 @@
             
         }
 
-        .team-listing-section {
+        .revenue-section {
             display: flex;
             flex-direction: column;
             padding: 10px 20px;
         }
 
-        .team-listing-title {
+        .revenue-title {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
         }
 
-        .team-listing-title h3 {
+        .revenue-title h3 {
             text-transform: uppercase;
             font-size: 30px;
             letter-spacing: 5px;
@@ -196,31 +197,143 @@
             margin-right: 30px;
         }
 
-        .invite-member-block {
+        .revenue-navbar {
+            display: flex;
+            position: relative;   
+            margin-bottom: 40px;                
+        }
+
+        .revenue-navbar a {
+            font-size: 20px;
+            display: inline-flex;
+            text-decoration: none;
+            font-family: sans-serif;
+            letter-spacing: 0.01em;
+            padding: 10px 15px;
+            border-width: 0px 0px 2px;
+            background-color: transparent;
+            cursor: pointer;
+            max-width: 300px;
+            white-space: normal;
+            border-radius: 4px 4px 0px 0px;
+            justify-content: center;
+            align-items: center;
+            max-width: 360px;
+            overflow: hidden;
+            border-bottom-style: solid;
+            border-bottom-color: rgba(255, 255, 255, 0.16);
+            appearance: none;
+            transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        }
+
+        a, :visited, :link {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 1);
+        }
+
+        a:hover {
+            background-color: rgba(240, 255, 255, 0.16);
+        }
+/* 
+        .create-game-buttons {
             padding: 25px 25px;
             
         }
 
-        .invite-member-button {
+        .edit-button-png, .delete-button-png {
+            width: 50px;
+            height: 50px;
             border: none;
-            background-color: rgb(4, 102, 221);
-            padding: 15px 30px;
+            padding: 10px;
+            /* margin-right: 10px; 
+            margin: 10px;
+            background-color: rgb(39, 39, 39);
+        } */
+
+        .sales-report-category-selection {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .product-selection-block {
+            margin-right: 100px;
             font-size: 20px;
+            letter-spacing: 0.01em;
+        }
+
+        .product-selection {
+            margin-right: 30px;
+            font-size: 15px;
+            padding-bottom: 5px;
+        }
+
+        .dropdown-product-selection-menu .dropdown-button {
+            font-size: 18px;
+            overflow: hidden;
+            border: none;
+            outline: none;
+            color: white;
+            
+            background-color: inherit;
+            font-family: inherit;
+        }
+
+        /* .dropdown-button {
+            
+        }
+        .dropdown .dropbtn {
+        
+        } */
+
+        /* .navbar a:hover, .dropdown:hover .dropbtn {
+        background-color: red;
+        }
+
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        } */
+
+        /* .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        }
+
+        .dropdown-content a:hover {
+        background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+        display: block;
+        } */
+
+        .button-product-download-csv {
+            border: none;
+            text-align: center;
+            background-color: rgb(4, 102, 221);
+            padding: 15px 15px;
+            font-size: 15px;
             color:whitesmoke;
             border-radius: 10px;
             letter-spacing: 3px;
+            /* margin-bottom: 15px; */
             cursor: pointer;
         }
 
-        a {
-            text-decoration: none;
-            color: whitesmoke;
-        }
-
-        .team-listing-block {
+        .revenue-table-block {
             padding: 20px;
             background-color: rgb(39, 39, 39);
             width: 100%;
+            margin-top: 15px;
         }
 
         table {
@@ -235,9 +348,10 @@
         }
 
         td, th {
-            text-align: left;
+            text-align: center;
             padding: 20px;
-            font-size: 20px;
+            font-size: 15px;
+            letter-spacing: 0.01em;
         }
 
         th {
@@ -265,109 +379,6 @@
             max-width: 100%;
             height: auto;
         }
-
-        /* button.active {
-            background-color: #04AA6D;
-            color: white;
-        }
-
-        button:hover:not(.active) {
-            background-color: #555;
-            color: white;
-        } */
-
-        /* main {
-            display: flex;
-            flex-direction: column;
-        } */
-
-        /* .top-navbar {
-            overflow: hidden;
-            background-color: #333;
-        }
-
-        .top-navbar a {
-            float: left;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 15px;
-        }	
-
-        .top-navbar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #201e1e;
-            
-            padding-bottom: 15px;
-        }
-
-        section .background-section {
-            background-color: rgb(23, 21, 114);
-            padding: 20px;
-        }
-
-        section .sign-in-image {
-            float: left;
-        }
-
-        section .sign-in-message {
-            float: right;
-        }
-
-        h1 {
-            color: whitesmoke;
-            text-transform: uppercase;
-            font-size: 2em;
-            font-weight: 100;
-        } 
-
-        .dev-image {
-            height: 6em;
-            
-            /* will-change: filter;
-            transition: filter 300ms; 
-        }
-
-        #company-logo {
-            font-size: 30px;
-            position: absolute;
-            top: 1%;
-            left: 2.5%;
-        }
-
-        button {
-            font-size: 20px;
-            padding: 10px 30px 10px 30px;
-        }
-
-        ul {
-            list-style: none;
-            
-        } */
-
-        /* .logo {
-            height: 6em;
-            padding: 1.5em;
-            will-change: filter;
-            transition: filter 300ms;
-        }
-        .logo:hover {
-            filter: drop-shadow(0 0 2em #646cffaa);
-        }
-        .logo.svelte:hover {
-            filter: drop-shadow(0 0 2em #ff3e00aa);
-        }
-        .read-the-docs {
-            color: #888;
-        } */
     </style>
 </head>
 <body>
@@ -413,32 +424,95 @@
                 </div>
             </header>
             <main>
-                <section class="team-listing-section">
-                    <div class="team-listing-title">
-                        <h3>Your Team</h3>
-                        <div class="invite-member-block">
-                            <button class="invite-member-button"><a href="/KLH/AddNewMember.html">INVITE</a></button>
-                            <!-- <button class="edit-button-png"><img src="images\edit-button.png"></button>
-                            <button class="delete-button-png"><img src="images\delete-button.png"></button> -->
-                        </div>
+                <section class="revenue-section">
+                    <div class="revenue-title">
+                        <h3>Revenue</h3>
+                        <!-- <div class="create-game-buttons">
+                            <button class="add-button-png">INVITE</button>
+                         <button class="edit-button-png"><img src="images\edit-button.png"></button>
+                            <button class="delete-button-png"><img src="images\delete-button.png"></button> 
+                        </div> -->
                     </div>
-                    <div class="team-listing-block">
+                    <div class="revenue-navbar">
+                        <a class="revenue-sales-report">Sales Report</a>
+                        <a class="revenue-payout-report" href="/KLH/RevenuePayoutReport.html">Payout Report</a>
+                    </div>
+
+                    <div class="sales-report-category-selection">
+                        <div class="product-selection-block">
+                            <label class="product-selection" for="product-selection">Product</label>
+                            <div class="dropdown-product-selection-menu">
+                                <button class="dropdown-button">All Games</button>
+                            </div>
+                            <!-- <svg class="dropwdown-button" focusable="false" aria-hidden="true"> 
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M18.707 9.707 12 16.414 5.293 9.707l1.414-1.414L12 13.586l5.293-5.293 1.414 1.414Z"></path>
+                            </svg> -->
+                        </div>
+                        <button class="button-product-download-csv">DOWNLOAD CSV</button>
+                    </div>
+
+                    <div class="revenue-table-block">
                         <!-- <h2>Create Your First Game</h2>
                         <p>Click the button below and enter your game details.</p>
                         <button>CREATE GAME</button> -->
                         <table>
                             <thead>
                                 <tr>
-                                    <td>Name</td>
-                                    <td>Email</td>                                    
-                                    <td>Roles</td>
-                                    <td>Product</td>
-                                    <td>Notifications</td>
-                                    <td></td>
+                                    <td>Sales ID</td>
+                                    <td>Product ID</td>                                    
+                                    <td>Developer</td>
+                                    <!-- <td>Total Purchase Number</td> -->
+                                    <td>Total Purchase Amount</td> 
+                                    <!-- <td>Total Refund Number</td> -->
+                                    <td>Total Refund Amount</td>
+                                    <td>Adjusted Base Revenue</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
+                                    <td colspan="6">We can't find any matching search results.</td>
+                                </tr>
+                                <!-- <tr>
+                                    <td>10001</td>
+                                    <td>1</td>                                    
+                                    <td>Vincent</td>
+                                     <td>1</td> 
+                                    <td>4</td>
+                                     <td>None</td> 
+                                    <td>None</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td>10010</td>
+                                    <td>1</td>                                    
+                                    <td>Soo</td>
+                                     <td>1</td> 
+                                    <td>4</td>
+                                     <td>None</td> 
+                                    <td>None</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td>10001</td>
+                                    <td>1</td>                                    
+                                    <td>Viskra</td>
+                                     <td>1</td>
+                                    <td>4</td>
+                                    <td>None</td> 
+                                    <td>None</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td>10001</td>
+                                    <td>1</td>                                    
+                                    <td>Vishnu</td>
+                                    <td>1</td> 
+                                    <td>4</td>
+                                    <td>None</td> 
+                                    <td>None</td>
+                                    <td>4</td>
+                                </tr> -->
+                                <!-- <tr>
                                     <td>Vincent</td>
                                     <td>dummyusersigningin01@gmail.com</td>
                                     <td>Owner</td>
@@ -453,7 +527,7 @@
                                     <td>All Products</td>
                                     <td></td>
                                     <td><button class="game-delete">Delete</button></td>
-                                    <!-- <td><button class="game-delete">Edit</button></td> -->
+                                     <td><button class="game-delete">Edit</button></td> 
                                 </tr>
                                 <tr>
                                     <td>Viskra</td>
@@ -478,7 +552,7 @@
                                     <td>All Products</td>
                                     <td></td>
                                     <td><button class="game-delete">Delete</button></td>
-                                </tr>
+                                </tr> -->
                             </tbody>
                         </table>
                     </div>

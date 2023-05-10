@@ -44,8 +44,8 @@
 
         html, body {
             position: relative;
-            /* width: 100%;
-            height: 100%; */
+            width: 100%;
+            height: 100%;
         }
 
         body {
@@ -58,6 +58,10 @@
 
         section {
             display: flex;
+        }
+        
+        #section-ignore {
+            opacity: 0.5;
         }
 
         hr {
@@ -155,8 +159,7 @@
         }
 
         button:hover:not(.active) {
-            background-color: #555;
-            color: white;
+            opacity: 0.7;
         }
 
         header {
@@ -199,6 +202,16 @@
         .invite-member-block {
             padding: 25px 25px;
             
+        }
+
+        .edit-button-png, .delete-button-png {
+            width: 50px;
+            height: 50px;
+            border: none;
+            padding: 10px;
+            /* margin-right: 10px; */
+            margin: 10px;
+            background-color: rgb(39, 39, 39);
         }
 
         .invite-member-button {
@@ -264,6 +277,118 @@
         img {
             max-width: 100%;
             height: auto;
+        }
+
+        .add-new-member-block {
+            opacity: 1;
+            /* margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            transform: translate(50%, 50%); */
+            background-color: #141313; 
+            border-radius: 4px;
+            border: 3px solid rgba(255, 255, 255);
+            box-shadow: inset;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
+            justify-content: center;
+            align-items: center;
+            max-width: 20%;
+            max-height: 100%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        form {
+            color: whitesmoke;
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        .add-new-member-title h1 {
+            font-size: 40px;
+            letter-spacing: 0.01em;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .add-new-member-team h2 {
+            letter-spacing: 0.01em;
+            display: flex;
+            flex-direction: column;
+            color: rgba(70, 64, 64);
+        }
+
+        .new-member-email, .new-member-role, .new-member-product-selection, .new-member-invite-button, .new-member-cancel-button {
+            margin-bottom: 15px;
+        }  
+
+        input { 
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            padding: 20px 0px 20px 5px;
+            padding-left: 10px;
+            background-color: #333;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255);
+            color: whitesmoke;
+            font-size: 20px;
+        }
+
+        input::placeholder {
+            text-align: center;
+            font-size: 20px;
+            text-align: left;
+        }
+
+        .new-member-info-block {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .new-member-confirmation-block {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+            /* display: flex;
+            flex-direction: column; */
+        }
+
+        .new-member-invite-button, .new-member-cancel-button {
+            padding: 10px;
+        }
+
+        .new-member-invite-button {
+            border: none;
+            background-color: rgb(4, 102, 221);
+            padding: 15px 30px;
+            font-size: 20px;
+            color:whitesmoke;
+            border-radius: 10px;
+            letter-spacing: 3px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        .new-member-cancel-button {
+            border: none;
+            background-color: rgba(70, 64, 64);
+            padding: 15px 30px;
+            font-size: 20px;
+            color:whitesmoke;
+            border-radius: 10px;
+            letter-spacing: 3px;
+            cursor: pointer;
         }
 
         /* button.active {
@@ -371,7 +496,7 @@
     </style>
 </head>
 <body>
-    <section>
+    <section id="section-ignore">
         <nav class="side-navbar">
             <div class="side-navbar-column">
                 <div class="studio-name-block"><h1>2DArchive</h1></div>
@@ -417,7 +542,7 @@
                     <div class="team-listing-title">
                         <h3>Your Team</h3>
                         <div class="invite-member-block">
-                            <button class="invite-member-button"><a href="/KLH/AddNewMember.html">INVITE</a></button>
+                            <button class="invite-member-button"><a href="">INVITE</a></button>
                             <!-- <button class="edit-button-png"><img src="images\edit-button.png"></button>
                             <button class="delete-button-png"><img src="images\delete-button.png"></button> -->
                         </div>
@@ -487,6 +612,33 @@
             <footer>
                 <p>&copy; 2023, 2DArchive</p>
             </footer>
+        </div>
+    </section>
+    <section class="add-member-section">
+        <div class="add-new-member-block">
+            <form>
+                <div class="add-new-member-title">
+                    <h1>Invite your new member to the Team</h1>
+                </div>
+                <div class="add-new-member-team">
+                    <h2>2DArchive</h2>
+                </div>
+                <div class="new-member-info-block">
+                    <div class="new-member-email">
+                        <input type="email" id="member-email" name="member-email" placeholder="Email Address">
+                    </div>
+                    <div class="new-member-role">
+                        <input type="text" id="member-role" name="member-role" placeholder="Role">
+                    </div>
+                    <div class="new-member-product-selection">
+                        <input type="text" id="member-product" name="member-product" placeholder="Products">
+                    </div>
+                </div>
+                <div class="new-member-confirmation-block">
+                    <button class="new-member-invite-button">INVITE</button>
+                    <button class="new-member-cancel-button">CANCEL</button>
+                </div>
+            </form>
         </div>
     </section>
 </body>

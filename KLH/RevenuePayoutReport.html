@@ -58,6 +58,7 @@
 
         section {
             display: flex;
+            min-height: 100vh;
         }
 
         hr {
@@ -177,18 +178,18 @@
             
         }
 
-        .team-listing-section {
+        .revenue-section {
             display: flex;
             flex-direction: column;
             padding: 10px 20px;
         }
 
-        .team-listing-title {
+        .revenue-title {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
         }
 
-        .team-listing-title h3 {
+        .revenue-title h3 {
             text-transform: uppercase;
             font-size: 30px;
             letter-spacing: 5px;
@@ -196,12 +197,61 @@
             margin-right: 30px;
         }
 
-        .invite-member-block {
+        .revenue-navbar {
+            display: flex;
+            position: relative;   
+            margin-bottom: 40px;         
+        }
+
+        .revenue-navbar a {
+            font-size: 20px;
+            display: inline-flex;
+            text-decoration: none;
+            font-family: sans-serif;
+            letter-spacing: 0.01em;
+            padding: 10px 15px;
+            border-width: 0px 0px 2px;
+            background-color: transparent;
+            cursor: pointer;
+            max-width: 300px;
+            white-space: normal;
+            border-radius: 4px 4px 0px 0px;
+            justify-content: center;
+            align-items: center;
+            max-width: 360px;
+            overflow: hidden;
+            border-bottom-style: solid;
+            border-bottom-color: rgba(255, 255, 255, 0.16);
+            appearance: none;
+            transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        }
+
+        a, :visited, :link {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 1);
+            /* border-bottom-color: whitesmoke; */
+        }
+
+        a:hover {
+            background-color: rgba(240, 255, 255, 0.16);
+        }
+
+        .create-game-buttons {
             padding: 25px 25px;
             
         }
 
-        .invite-member-button {
+        .edit-button-png, .delete-button-png {
+            width: 50px;
+            height: 50px;
+            border: none;
+            padding: 10px;
+            /* margin-right: 10px; */
+            margin: 10px;
+            background-color: rgb(39, 39, 39);
+        }
+
+        .add-button-png {
             border: none;
             background-color: rgb(4, 102, 221);
             padding: 15px 30px;
@@ -209,15 +259,9 @@
             color:whitesmoke;
             border-radius: 10px;
             letter-spacing: 3px;
-            cursor: pointer;
         }
 
-        a {
-            text-decoration: none;
-            color: whitesmoke;
-        }
-
-        .team-listing-block {
+        .revenue-payout-block {
             padding: 20px;
             background-color: rgb(39, 39, 39);
             width: 100%;
@@ -235,7 +279,8 @@
         }
 
         td, th {
-            text-align: left;
+            /* text-align: left; */
+            text-align: center;
             padding: 20px;
             font-size: 20px;
         }
@@ -413,79 +458,70 @@
                 </div>
             </header>
             <main>
-                <section class="team-listing-section">
-                    <div class="team-listing-title">
-                        <h3>Your Team</h3>
-                        <div class="invite-member-block">
-                            <button class="invite-member-button"><a href="/KLH/AddNewMember.html">INVITE</a></button>
-                            <!-- <button class="edit-button-png"><img src="images\edit-button.png"></button>
-                            <button class="delete-button-png"><img src="images\delete-button.png"></button> -->
-                        </div>
+                <section class="revenue-section">
+                    <div class="revenue-title">
+                        <h3>Revenue</h3>
+                        <!-- <div class="create-game-buttons">
+                            <button class="add-button-png">INVITE</button>
+                         <button class="edit-button-png"><img src="images\edit-button.png"></button>
+                            <button class="delete-button-png"><img src="images\delete-button.png"></button> 
+                        </div> -->
                     </div>
-                    <div class="team-listing-block">
+                    <div class="revenue-navbar">
+                        <a class="revenue-sales-report" href="/KLH/RevenueSalesReport.html">Sales Report</a>
+                        <a class="revenue-payout-report">Payout Report</a>
+                    </div>
+
+                    <div class="revenue-payout-block">
                         <!-- <h2>Create Your First Game</h2>
                         <p>Click the button below and enter your game details.</p>
                         <button>CREATE GAME</button> -->
                         <table>
                             <thead>
                                 <tr>
-                                    <td>Name</td>
-                                    <td>Email</td>                                    
-                                    <td>Roles</td>
-                                    <td>Product</td>
-                                    <td>Notifications</td>
-                                    <td></td>
+                                    <td>Product Title</td>
+                                    <td>Revenue Earned This Period (RM)</td>                                    
+                                    <td>Revenue YTD (RM)</td>                                    
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Vincent</td>
-                                    <td>dummyusersigningin01@gmail.com</td>
-                                    <td>Owner</td>
-                                    <td>All Products</td>
+                                    <td colspan="3">
+                                        There are currently no payout reports yet.
+                                    </td>
+                                </tr>
+                                <!-- <tr>
                                     <td></td>
-                                    <td><button class="game-delete">Delete</button></td>
+                                    <td></td>
+                                    <td></td>                            
                                 </tr>
                                 <tr>
-                                    <td>Soo</td>
-                                    <td>soo.lin10@gmail.com</td>
-                                    <td>Admin</td>
-                                    <td>All Products</td>
                                     <td></td>
-                                    <td><button class="game-delete">Delete</button></td>
-                                    <!-- <td><button class="game-delete">Edit</button></td> -->
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                                 <tr>
-                                    <td>Viskra</td>
-                                    <td>viskragsend@gmail.com</td>                                    
-                                    <td>Finance</td>
-                                    <td>All Products</td>
                                     <td></td>
-                                    <td><button class="game-delete">Delete</button></td>
+                                    <td></td>                                    
+                                    <td></td>                                
                                 </tr>
                                 <tr>
-                                    <td>Vishnu</td>
-                                    <td>vhleemin@gmail.com</td>                                    
-                                    <td>Player Moderation Tools</td>
-                                    <td>All Products</td>
                                     <td></td>
-                                    <td><button class="game-delete">Delete</button></td>
+                                    <td></td>                                    
+                                    <td></td>                            
                                 </tr>
                                 <tr>
-                                    <td>Ahmad</td>
-                                    <td>muhammadahmad@gmail.com</td>                                    
-                                    <td>Finance</td>
-                                    <td>All Products</td>
                                     <td></td>
-                                    <td><button class="game-delete">Delete</button></td>
-                                </tr>
+                                    <td></td>                                    
+                                    <td></td>                                
+                                </tr> -->
                             </tbody>
                         </table>
                     </div>
                 </section>
             </main>
             <footer>
-                <p>&copy; 2023, 2DArchive</p>
+                <p>&copy; 2023, 2DArchive. All rights reserved.</p>
             </footer>
         </div>
     </section>
